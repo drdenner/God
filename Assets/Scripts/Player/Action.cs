@@ -8,19 +8,11 @@ namespace God.Player
 
 		// Inspector Variables
 		public GameObject prefab;
-		public int level = 1;
-		public float projectileSpeed = 10f;
-		public float projectileSpeedMod = 0f;
-		public float damage = 50f;
-		public float damageMod = 0f;
-		public float range = 10f;
-		public float rangeMod = 0f;
-		public bool piercing = false;
-		public float attackSpeed;	
-				
+	
+
 		// Other Variables
 		string sourceTag;
-		God.Managers.PoolManager poolManager;
+		God.Managers.PoolObject PoolObject;
 
 
 
@@ -33,7 +25,7 @@ namespace God.Player
 		
 		void activateAction ()
 		{
-			GameObject obj = poolManager.getObject ();
+			GameObject obj = PoolObject.getObject ();
 			if (obj == null) {
 				return;
 			}
@@ -54,9 +46,9 @@ namespace God.Player
 		
 		
 		
-		public void setPooler (God.Managers.PoolManager pooler)
+		public void setPooler (God.Managers.PoolObject pooler)
 		{
-			this.poolManager = pooler;
+			this.PoolObject = pooler;
 		}
 		
 	}	

@@ -25,28 +25,27 @@ public class BuildMenu : MonoBehaviour
 			GameObject newItem = Instantiate (item) as GameObject;
 			RectTransform newItemRect = newItem.GetComponent<RectTransform> ();
 
-			// Set Name
-			Text text = newItem.GetComponentInChildren<Text> ();
-			text.text = prefabs [i].name;
-			newItem.name = prefabs [i].name;
-
-			// Set Thumbnail
-			Image image = newItem.GetComponentInChildren <Image> ();
-			Texture2D preview = AssetPreview.GetMiniThumbnail (newItem); 
-
-			Rect rect = new Rect (0, 0, itemWidth, itemHeight);
-			image.sprite = Sprite.Create (preview, rect, new Vector2 (0f, 0f), 125);
-
-
-
-
-
 			newItemRect.offsetMin = new Vector2 (x, 0);
 			x = x + itemWidth;
 			newItemRect.offsetMax = new Vector2 (x, itemHeight);
 
+			// Set Name
+			Text itemName = newItem.transform.FindChild ("Name").GetComponent<Text> ();
+			itemName.text = prefabs [i].name;
+			newItem.name = prefabs [i].name;
+
+			// Set Thumbnail
+
+			Image image = newItem.transform.FindChild ("Thumbnail").GetComponent<Image> ();
+
+			Texture2D preview = AssetPreview.GetMiniThumbnail (prefabs [i]); 
+
+			Rect rect = new Rect (0, 0, 64, 64);
+			image.sprite = Sprite.Create (preview, rect, new Vector2 (0f, 0f), 125);
+
 			newItem.transform.SetParent (transform, false);
 		}
+		gameObject.SetActive (false);
 
 	}
 

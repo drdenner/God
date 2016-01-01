@@ -13,10 +13,10 @@ namespace God.Player
 			GameObject obj = GameObject.Find ("Object Pool");
 			action = GetComponent<Action> ();
 			
-			foreach (Managers.PoolManager poolManager in obj.GetComponents<Managers.PoolManager>()) {
+			foreach (Managers.PoolObject poolObject in obj.GetComponents<Managers.PoolObject>()) {
 				
-				if (action.prefab.name == poolManager.prefab.name) {
-					action.setPooler (poolManager);
+				if (action.prefab.name == poolObject.prefab.name) {
+					action.setPooler (poolObject);
 					action.doAction (curserPosition);
 					break;
 				}
