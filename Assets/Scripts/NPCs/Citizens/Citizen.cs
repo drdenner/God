@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections;
 
 namespace God.Npcs
-{
+{ 
 	public class Citizen : MonoBehaviour
 	{
 		// Inspector

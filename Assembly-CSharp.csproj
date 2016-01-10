@@ -47,23 +47,29 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Buildings\Building.cs" />
      <Compile Include="Assets\Scripts\Buildings\HerbalistHut.cs" />
+     <Compile Include="Assets\Scripts\Buildings\House.cs" />
      <Compile Include="Assets\Scripts\Buildings\Storage.cs" />
      <Compile Include="Assets\Scripts\Enviroment\Berries.cs" />
      <Compile Include="Assets\Scripts\Enviroment\Food.cs" />
-     <Compile Include="Assets\Scripts\Managers\Helpers\CurserPosition.cs" />
-     <Compile Include="Assets\Scripts\Managers\Object Pool\PoolManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\Object Pool\PoolMember.cs" />
-     <Compile Include="Assets\Scripts\Managers\Object Pool\PoolObject.cs" />
+     <Compile Include="Assets\Scripts\Game Manager\CurserPosition.cs" />
+     <Compile Include="Assets\Scripts\Game Manager\Object Pool\PoolManager.cs" />
+     <Compile Include="Assets\Scripts\Game Manager\Object Pool\PoolMember.cs" />
+     <Compile Include="Assets\Scripts\Game Manager\Object Pool\PoolObject.cs" />
      <Compile Include="Assets\Scripts\NPCs\Citizens\Citizen.cs" />
      <Compile Include="Assets\Scripts\NPCs\Citizens\Herbalist.cs" />
+     <Compile Include="Assets\Scripts\NPCs\Citizens\Transporter.cs" />
      <Compile Include="Assets\Scripts\Player\Action.cs" />
      <Compile Include="Assets\Scripts\Player\Actions.cs" />
+     <Compile Include="Assets\Scripts\Player\Build Manager\BuildManager.cs" />
+     <Compile Include="Assets\Scripts\Player\Build Manager\BuildMenu.cs" />
+     <Compile Include="Assets\Scripts\Player\Build Manager\MenuItem.cs" />
      <Compile Include="Assets\Scripts\Player\Builder\Build.cs" />
-     <Compile Include="Assets\Scripts\Player\Builder\BuildMenu.cs" />
-     <Compile Include="Assets\Scripts\Player\Builder\MenuItem.cs" />
-     <Compile Include="Assets\Scripts\Player\Keyboard.cs" />
+     <Compile Include="Assets\Scripts\Player\CameraSettings.cs" />
+     <Compile Include="Assets\Scripts\Player\InputManager.cs" />
      <Compile Include="Assets\Scripts\Player\Movement.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
+     <Compile Include="Assets\Scripts\Tests\Build.cs" />
      <Compile Include="Assets\test.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

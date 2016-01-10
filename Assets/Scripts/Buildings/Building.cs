@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace God.Buildings
 {
@@ -9,29 +10,21 @@ namespace God.Buildings
 		public int health;
 		public GameObject worker;
 
-		// Other Variables
-		bool created = false;
-		God.Npcs.Citizen citizen;
-		God.Managers.PoolManager poolManager;
-		int food = 0;
-		int maxFood = 50;
 
-		void Update ()
+		// Private Variables
+		private God.Npcs.Citizen citizen;
+		private God.Managers.PoolManager poolManager;
+		private int food = 0;
+		private Dictionary<string, int> inventory = new Dictionary<string, int> ();
+
+		public void create ()
 		{
-			if (!created) {
-				create ();
-			}
-			
-		}
-		
-		void create ()
-		{
-			poolManager = GameObject.Find ("Managers/Object Pool").GetComponent<God.Managers.PoolManager> ();
+			poolManager = GameObject.Find ("Game Manager/Object Pool").GetComponent<God.Managers.PoolManager> ();
 			spawn (worker.name);
-			created = true;
+
 		}
-		
-		
+
+
 		void spawn (string name)
 		{
 			GameObject obj = poolManager.getPoolObject (name);
@@ -41,12 +34,34 @@ namespace God.Buildings
 			Quaternion rot = transform.rotation;
 			rot.x = 0;
 			rot.z = 0;
-			
+
 			obj.transform.position = transform.position;
 			obj.transform.rotation = rot;
-			
+
 			obj.SetActive (true);
 		}
+
+		public void addItemToInventory (string name, int nr)
+		{
+			if (inventory .ContainsKey (name)) {
+				inventory [name] = inventory [name] + nr;
+			} else {
+				inventory [name] = nr;
+			}
+
+		}
+        
+		public int removeItemFromInventory (string name, int nr)
+		{
+			if (inventory.ContainsKey (name)) {
+				// check
+				return inventory [name] = inventory [name] - nr;
+			} else {
+				return 0;
+			}
+		} 
+
+
 
 		// Trigger - On Enter
 		void OnTriggerEnter (Collider other)
@@ -66,11 +81,9 @@ namespace God.Buildings
 			}
 		}
 
-		public void addFood (int food)
-		{
-			this.food = this.food + food;
-		}
 
+
+        
 
 	}
 }

@@ -20,10 +20,17 @@ namespace God.Npcs
 		;
 		public State state;
 
-
-
 		// Other Variables
 		bool working = false;
+
+		enum FoodType
+		{
+			berries,
+			apples
+        }
+		;
+
+		FoodType foodType;
 
 		void Update ()
 		{
@@ -102,7 +109,7 @@ namespace God.Npcs
 		IEnumerator addFood ()
 		{
 			for (int i=1; i <= maxFood; i++) {
-				God.Enviroment.Food food work.GetComponent<God.Enviroment.Food> ().removeFood (1);
+				work.GetComponent<God.Enviroment.Food> ().removeFood (1);
 				foodNr++;
 				yield return new WaitForSeconds (workSpeed);
 			}
@@ -112,7 +119,7 @@ namespace God.Npcs
 
 		void removeFood ()
 		{
-			home.GetComponent<God.Buildings.HerbalistHut> ().addFood (foodNr);
+			home.GetComponent<God.Buildings.Building> ().addItemToInventory ("Berries", foodNr);
 			foodNr = 0;
 		}
 

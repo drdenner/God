@@ -1,13 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NPCs\Citizens\Herbalist.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Player.cs">
     <Files>
-      <File FileName="Assets\Scripts\NPCs\Citizens\Herbalist.cs" Line="22" Column="3" />
-      <File FileName="Assets\Scripts\NPCs\Citizens\Citizen.cs" Line="79" Column="43" />
-      <File FileName="Assets\Scripts\Buildings\Building.cs" Line="17" Column="20" />
-      <File FileName="Assets\Scripts\Enviroment\Food.cs" Line="12" Column="23" />
-      <File FileName="Assets\Scripts\Enviroment\Berries.cs" Line="6" Column="2" />
-      <File FileName="Assets\Scripts\Buildings\HerbalistHut.cs" Line="6" Column="27" />
+      <File FileName="Assets\Scripts\Player\PlayerState.cs" Line="6" Column="26" />
+      <File FileName="Assets\Scripts\Player\Build Manager\BuildManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Build Manager\MenuItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\InputManager.cs" Line="8" Column="3" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="28" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -5,61 +5,33 @@ namespace God.Player
 {
 	public class Player : MonoBehaviour
 	{
+		public enum PlayerState
+		{
+			idle,
+			building
+		}
 
-		// Other Variables
+		public PlayerState playerState;
 
-		Vector3 curserPosition;
-	
-		Actions actions;
-
-
+		private God.Player.BuildManager buildManager;
 
 		void Start ()
 		{
-		
-			actions = GetComponent<Actions> ();
-		
+			buildManager = GameObject.Find ("Player/Build Manager").GetComponent<God.Player.BuildManager> ();
+			playerState = PlayerState.idle;
 		}
-		
 
+		void Update ()
+		{
+			if (playerState == PlayerState.building) {
+				if (buildManager.buildMenu.activeSelf == false) {
+					gameObject.GetComponent<God.Player.CameraSettings> ().setCamara ("top");
+					buildManager.showMenu ();
+				}
 
-		
-		// Update
-		private void Update ()
-		{
-			controller ();
-			
-			
-		}
-		
-		// Controller
-		private void controller ()
-		{
-			if (Input.GetMouseButton (0)) {
-				//ClickToMove.Move (navAgent, getCurserPosition ());
-			} 
-			if (Input.GetMouseButtonDown (1) || Input.GetKey (KeyCode.Q)) {
-				actions.doAction (getCurserPosition ());
-				
 			}
 		}
-		
 
-		
-
-		
-
-		
-		Vector3 getCurserPosition ()
-		{
-			
-			RaycastHit hit;
-			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			
-			if (Physics.Raycast (ray, out hit, 500)) {
-				curserPosition = hit.point;		
-			}
-			return curserPosition;
-		}
+       
 	}
 }

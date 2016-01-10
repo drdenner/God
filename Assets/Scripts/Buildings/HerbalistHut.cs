@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace God.Buildings
 {
-	public class HerbalistHut : Building
+	public class HerbalistHut : MonoBehaviour
 	{
 
 
